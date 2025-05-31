@@ -36,8 +36,8 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010205
-#define ANYCUBIC_TOUCHSCREEN
-#define KNUTWURST_SPECIAL_MENU
+//#define ANYCUBIC_TOUCHSCREEN
+//#define KNUTWURST_SPECIAL_MENU
 // #define ANYCUBIC_TFT_DEBUG
 // #define POWER_OUTAGE_TEST
 
@@ -3472,7 +3472,7 @@
 // https://wiki.fysetc.com/Mini12864_Panel/
 //
 //#define FYSETC_MINI_12864_X_X    // Type C/D/E/F. No tunable RGB Backlight by default
-//#define FYSETC_MINI_12864_1_2    // Type C/D/E/F. Simple RGB Backlight (always on)
+#define FYSETC_MINI_12864_1_2    // Type C/D/E/F. Simple RGB Backlight (always on)
 //#define FYSETC_MINI_12864_2_0    // Type A/B. Discreet RGB Backlight
 //#define FYSETC_MINI_12864_2_1    // Type A/B. NeoPixel RGB Backlight
 //#define FYSETC_GENERIC_12864_1_1 // Larger display with basic ON/OFF backlight.
@@ -3938,7 +3938,7 @@
  */
 
 // LED Type. Enable only one of the following two options:
-//#define RGB_LED
+#define RGB_LED
 //#define RGBW_LED
 
 #if EITHER(RGB_LED, RGBW_LED)
@@ -3946,6 +3946,10 @@
   //#define RGB_LED_G_PIN 43
   //#define RGB_LED_B_PIN 35
   //#define RGB_LED_W_PIN -1
+  #define RGB_LED_R_PIN 25
+  #define RGB_LED_G_PIN 27
+  #define RGB_LED_B_PIN 29
+  #define RGB_LED_W_PIN -1
 #endif
 
 #if ANY(RGB_LED, RGBW_LED, PCA9632)
