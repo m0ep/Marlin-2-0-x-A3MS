@@ -641,7 +641,11 @@
 #if ENABLED(KNUTWURST_4MAXP2)
   #define TEMP_SENSOR_0 11
 #else
-  #define TEMP_SENSOR_0 1
+  // Stock thermistor
+  //#define TEMP_SENSOR_0 1
+
+  // E3D Revo Six
+  #define TEMP_SENSOR_0 5
 #endif
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
@@ -779,9 +783,16 @@
                                   // Set/get with G-code: M301 E[extruder number, 0-2]
 
   #if ANY(KNUTWURST_MEGA, KNUTWURST_MEGA_S, KNUTWURST_MEGA_P)
-    #define  DEFAULT_Kp 12.28
-    #define  DEFAULT_Ki  0.75
-    #define  DEFAULT_Kd 50.06
+    // Stock hotend
+    //#define  DEFAULT_Kp 12.28
+    //#define  DEFAULT_Ki  0.75
+    //#define  DEFAULT_Kd 50.06
+
+    // E3D Revo Six
+    #define DEFAULT_Kp 21.05
+    #define DEFAULT_Ki 4.08
+    #define DEFAULT_Kd 27.16
+
   #endif
 
   #if ENABLED(KNUTWURST_MEGA_X)
@@ -885,9 +896,15 @@
   //#define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
   #if ANY(KNUTWURST_MEGA, KNUTWURST_MEGA_S, KNUTWURST_MEGA_P)
-    #define DEFAULT_bedKp 251.78
-    #define DEFAULT_bedKi  49.57
-    #define DEFAULT_bedKd 319.73
+    // Stock heatbed
+    //#define DEFAULT_bedKp 251.78
+    //#define DEFAULT_bedKi  49.57
+    //#define DEFAULT_bedKd 319.73
+
+    // Princore
+    #define DEFAULT_bedKp 33.32
+    #define DEFAULT_bedKi 1.63
+    #define DEFAULT_bedKd 453.16
   #elif ENABLED(KNUTWURST_MEGA_X)
     #define DEFAULT_bedKp 251.78
     #define DEFAULT_bedKi  49.57
@@ -967,7 +984,7 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   //#define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of flash)
-  //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of flash)
+  #define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of flash)
 #endif
 
 // @section safety
