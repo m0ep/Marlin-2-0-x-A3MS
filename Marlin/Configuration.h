@@ -1430,7 +1430,7 @@
 #endif
 
 #if ENABLED(KNUTWURST_MEGA_S)
-  #define DEFAULT_MAX_FEEDRATE          { 500, 500, 6, 40 } // same feedrate for BMG
+  #define DEFAULT_MAX_FEEDRATE          { 500, 500, 20, 60 } // same feedrate for BMG
 #endif
 
 #if ENABLED(KNUTWURST_MEGA_X)
@@ -1879,7 +1879,7 @@
 #define XY_PROBE_FEEDRATE 8000
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST 600// HOMING_FEEDRATE_Z
+#define Z_PROBE_FEEDRATE_FAST 1200// HOMING_FEEDRATE_Z
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
